@@ -1,7 +1,16 @@
 # Nerdy-T-shirt-store
 
-Nerdy T-shirt store is small-scale e-commerce web application that can host categorized products with login,logout,signin,signout functionalities.
+ E-commerce web-application with categorized products using Django 
+& React
 
-It uses custom session_token to keep user logged in with login required and data validations
+ Login, Logout, Signup functionalities.
 
-Also, Razorpay has been integrated as a payment gateway.
+ Custom User model for additional functionality
+
+ Custom session token to keep user logged in
+
+ Cart functionality with login required ,etc conditional rendering using 
+React hooks
+
+ Complete Razorpay payment gateway integration to accept 
+payments
