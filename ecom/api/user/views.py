@@ -14,26 +14,19 @@ def generate_session_token(length = 10):
 
 @csrf_exempt
 def signin(request):
-    print('01')
     if not request.method == 'POST':
         return JsonResponse({'error':'Send a post request with valid parameters'})
-    print('02')
 
-    print(request.POST.items())
     username = request.POST['email']
     password = request.POST['password']
-    print('03')
     # validations
     if not re.match(r'^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', username):
         return JsonResponse({'error':'Enter a valid email'})
-    print('04')
     if len(password) < 3:
         return JsonResponse({'error':'Password needs to be of atleast 7 character'})
-    print('05')
     #
 
     UserModel = get_user_model()
-    print('06')
     try:
         user = UserModel.objects.get(email = username)
 
